@@ -26,7 +26,7 @@ A continuación, muestro el resultado del proyecto en una pantalla de escritorio
 
 ### Enlace al proyecto
 
-- [Ver el sitio en línea](https://your-solution-url.com)
+- [Ver el sitio en línea](https://camilo-atb.github.io/Social-Proof-Section-/)
 
 ## Mi proceso
 
