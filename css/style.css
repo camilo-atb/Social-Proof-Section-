@@ -1,0 +1,224 @@
+:root{
+    /*Colores Primarios*/
+    --very-dark-magenta: hsl(301, 45%, 22%); /*300, 43%, 22%*/
+    --soft-pink: hsl(333, 80%, 67%);
+    /*Colores Neutros*/
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+    --violet-color: hsl(321,46%,63%);;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1rem; /*16px*/
+    font-family: "League Spartan", serif;
+    min-height: 100vh;
+
+    background-image: url("../images/bg-pattern-top-mobile.svg"), url("../images/bg-pattern-bottom-mobile.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: auto, auto;
+    background-position: top left, bottom right;
+}
+
+.main{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+    
+    display: grid;
+    grid-template-areas: 
+    "section1"
+    "section2"
+    "section3"
+    "atribution";
+}
+
+.section{
+    padding: 20px 10px;
+}
+
+/* Primera Sección*/
+
+.start{
+    text-align: center;
+    grid-area: section1;
+}
+
+.start__title{
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+}
+
+.start__paragraph{
+    font-weight: 500;
+    color: var(--dark-grayish-magenta);
+    width: 94%;
+    line-height: 1.5;
+}
+
+/* Segunda Sección */
+
+.ratings{
+    display: grid;
+    gap: 1rem;
+    grid-area: section2;
+}
+
+.rating{
+    padding: 14px 0;
+    background-color: var(--light-grayish-magenta);
+    text-align: center;
+    border-radius: 5px;
+}
+
+.stars{
+    margin-bottom: 0.625rem;
+}
+
+.rating__start__paragraph{
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+}
+
+/* Sección Tres */
+
+.comments{
+    display: grid;
+    gap: 1rem;
+    grid-area: section3;
+}
+
+.comment{
+    padding: 30px;
+    background-color: var(--very-dark-magenta);
+    border-radius: 10px;
+}
+
+.comment__header{
+    display: flex;
+    gap: 1rem;
+}
+
+.commnt__buyer__info__subtitle{
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.commnt__buyer__info__subtitle--violet{
+    margin-top: 6px;
+    color: var(--violet-color);
+}
+
+.comment__picture{
+    width: 35px;
+    height: 35px;
+}
+
+.comment__img{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.comment__paragraph{
+    color: var(--light-grayish-magenta);
+    margin-top: 30px;
+    line-height: 1.5;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    grid-area: atribution;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1024px) {
+    
+    body{
+        display: flex;
+        align-items: center;
+        background-image: url("../images/bg-pattern-top-desktop.svg"), 
+        url("../images/bg-pattern-bottom-desktop.svg");
+        background-repeat: no-repeat, no-repeat;
+        background-position: top left, bottom right;
+        background-size: auto, auto;
+    }
+
+    .main{
+        height: 100%;
+        grid-template-areas: 
+        "section1 section2"
+        "section3 section3"
+        "atribution atribution";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .start{
+        text-align: start;
+        width: 70%;
+    }
+
+    .start__title{
+        width: 70%;
+    }
+
+    .rating{
+        display: flex;
+        width: 80%;
+        gap: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .rating2{
+        justify-self: center;
+    }
+
+    .rating3{
+        justify-self: end;
+    }
+
+    .stars{
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    .rating__start__paragraph{
+        align-self: center;
+    }
+
+    .comments{
+        grid-auto-flow: column;
+        height: 300px;
+        grid-template-areas: 
+        "comment1 comment2 comment3";
+    } 
+
+    .comment1{
+        grid-area: comment1;
+        align-self: start;
+    }
+
+    .comment2{
+        grid-area: comment2;
+        align-self: center;
+    }
+
+    .comment3{
+        grid-area: comment3;
+        align-self: end;
+    }
+}
